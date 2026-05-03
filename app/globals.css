@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-50 antialiased selection:bg-sky-500/30;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 shadow-xl;
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .a4-page {
+    box-shadow: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  @page {
+    margin: 20mm;
+  }
+}
